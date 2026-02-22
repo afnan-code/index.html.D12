@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D12 Clothing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0e0e0e;
+    color:white;
+}
+
+/* ===== GLASS NAVBAR ===== */
+header{
+    position:fixed;
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:700;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#f39c12;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Cart Icon */
+.cart{
+    margin-left:30px;
+    position:relative;
+    cursor:pointer;
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    background:#f39c12;
+    color:black;
+    font-size:12px;
+    padding:3px 7px;
+    border-radius:50%;
+}
+
+/* ===== HERO ===== */
+.hero-glass{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url('https://i.pinimg.com/736x/cb/98/c1/cb98c136b57922cfc778f621f4aec1d4.jpg')  center/cover no-repeat;
+    background-position-x: center;
+    position:relative;
+}
+
+.hero-glass::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.glass-box{
+    position:relative;
+    padding:60px 80px;
+    text-align:center;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 32px rgba(0,0,0,0.5);
+}
+
+.glass-box h1{
+    font-size:60px;
+    letter-spacing:4px;
+}
+
+.glass-box p{
+    margin-top:15px;
+    color:#ddd;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    background:#ff9800;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+
+
+/* ===== PRODUCTS ===== */
+.section{
+    padding:100px 60px;
+    text-align:center;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-top:50px;
+}
+
+.product-card{
+    background:#1a1a1a;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    position:relative;
+}
+
+.product-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.product-card:hover img{
+    transform:scale(1.1);
+}
+
+.product-card:hover{
+    transform:translateY(-15px);
+}
+
+/* Sale Badge */
+.sale{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#f39c12;
+    color:black;
+    padding:5px 10px;
+    font-size:12px;
+    border-radius:20px;
+}
+
+/* Wishlist */
+.wishlist{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.price{
+    color:#f39c12;
+    font-weight:600;
+}
+
+.stars{
+    color:gold;
+    font-size:14px;
+    margin:5px 0;
+}
+
+/* Footer */
+footer{
+    background:#000;
+    text-align:center;
+    padding:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">D12</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Trending</a>
+        <a href="#">Contact</a>
+        <div class="cart">
+            🛒
+            <div class="cart-count">2</div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-glass" id="home">
+
+    <div class="glass-box">
+        <h1>NEW DROPS 2026</h1>
+        <p>Limited Edition Streetwear Collection</p>
+        <a href="#shop" class="btn">Shop The Drop</a>
+    </div>
+
+</section>
+
+<section class="section">
+    <h2>Trending Collection</h2>
+    <div class="products">
+
+        <div class="product-card">
+            <div class="sale">SALE</div>
+            <div class="wishlist"></div>
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+            <div class="product-info">
+                <h3>Oversized Black Tee</h3>
+                <div class="stars">★★★★★</div>
+                <p class="price">₹999</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="wishlist"></div>
+            <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475">
+            <div class="product-info">
+                <h3>Premium Hoodie</h3>
+                <div class="stars">★★★★☆</div>
+                <p class="price">₹1999</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="sale">HOT</div>
+            <div class="wishlist"></div>
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+            <div class="product-info">
+                <h3>Urban Sneakers</h3>
+                <div class="stars">★★★★★</div>
+                <p class="price">₹2999</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+
+    <div class="product-card"> 
+      <div class="sale">HOT</div>
+      <div class="wishlist"></div>
+    <img src="images.jpeg" alt="Boot Cut Pants">
+    <div class="product-info">
+    <h3>Boot Cut Pants</h3>
+    <p>₹2,199</p>
+    <a href='#' class="btn">Add to Cart</a>
+</div>
+</div>
+
+</section>
+<section id="order" style="padding:120px 60px; background:#1a1a1a; min-height:100vh;">
+    <h1 style="text-align:center; margin-bottom:40px;">Place Your Order</h1>
+
+    <form style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:20px;">
+
+        <input type="text" placeholder="Full Name" required 
+        style="padding:12px; border:none; border-radius:8px;">
+
+        <input type="email" placeholder="Email Address" required 
+        style="padding:12px; border:none; border-radius:8px;">
+
+        <input type="text" placeholder="Product Name" required 
+        style="padding:12px; border:none; border-radius:8px;">
+
+        <input type="number" placeholder="Quantity" required 
+        style="padding:12px; border:none; border-radius:8px;">
+
+        <textarea placeholder="Delivery Address" required
+        style="padding:12px; border:none; border-radius:8px;"></textarea>
+
+        <button type="submit"
+        style="padding:12px; background:#ff9800; border:none; border-radius:30px; font-weight:bold; cursor:pointer;">
+        Confirm Order
+        </button>
+
+    </form>
+</section>
+
+<footer>
+© 2026 D12 Clothing Store. All Rights Reserved.
+</footer>
+
+</body>
+</html>
